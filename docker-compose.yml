@@ -1,0 +1,67 @@
+version: '3.9'
+
+networks:
+  vital_net:
+    driver: bridge
+    internal: true
+    ipam:
+      config:
+        - subnet: 172.18.0.0/16
+  ctfd_net:
+    driver: bridge
+
+services:
+  # --- CONTROL LAYER ---
+  ctfd:
+    image: ctfd/ctfd:latest
+    ports:
+      - "80:8000"
+    networks:
+      - ctfd_net
+    depends_on:
+      - db
+    volumes:
+      - ./ctfd_data:/var/lib/ctfd
+
+  db:
+    image: mariadb:10.4
+    networks:
+      - ctfd_net
+    environment:
+      - MYSQL_ROOT_PASSWORD=vital_root
+      - MYSQL_USER=ctfd
+      - MYSQL_PASSWORD=ctfd
+      - MYSQL_DATABASE=ctfd
+    volumes:
+      - db_data:/var/lib/mysql
+
+  # --- VULNERABLE CHALLENGE LAYER ---
+  static_file_server:
+    image: nginx:alpine
+    ports:
+      - "8081:80"
+    networks:
+      - vital_net
+    volumes:
+      - ./static-server:/usr/share/nginx/html:ro
+
+  stg_03_legacy_portal:
+    build: ./stg-03-web
+    ports:
+      - "8080:80"
+    networks:
+      - vital_net
+    cap_drop:
+      - ALL
+
+  stg_06_forensics:
+    build: ./stg-06-forensics
+    ports:
+      - "2222:22"
+    networks:
+      - vital_net
+    cap_drop:
+      - ALL
+
+volumes:
+  db_data:
