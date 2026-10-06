@@ -3,10 +3,9 @@ version: '3.9'
 networks:
   vital_net:
     driver: bridge
-    internal: true
     ipam:
       config:
-        - subnet: 172.18.0.0/16
+        - subnet: 172.29.0.0/16
   ctfd_net:
     driver: bridge
 
