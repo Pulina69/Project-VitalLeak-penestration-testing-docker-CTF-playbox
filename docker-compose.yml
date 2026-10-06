@@ -59,8 +59,9 @@ services:
       - "2222:22"
     networks:
       - vital_net
-    cap_drop:
-      - ALL
+    cap_add:
+      - SYS_CHROOT
+  
 
 volumes:
   db_data:
