@@ -1,5 +1,3 @@
-version: '3.9'
-
 networks:
   vital_net:
     driver: bridge
@@ -19,6 +17,10 @@ services:
       - ctfd_net
     depends_on:
       - db
+    environment:
+      # Forces CTFd to use MariaDB instead of its default SQLite database
+      - DATABASE_URL=mysql+pymysql://ctfd:ctfd@db/ctfd
+      - SECRET_KEY=VitalLeakSecretKey123!
     volumes:
       - ./ctfd_data:/var/lib/ctfd
 
