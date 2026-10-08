@@ -51,7 +51,7 @@ services:
   stg_03_legacy_portal:
     build: ./stg-03-web
     ports:
-      - "8888:80"
+      - "8080:80"
     networks:
       - vital_net
     cap_drop:
