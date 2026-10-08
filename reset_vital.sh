@@ -1,4 +1,10 @@
 #!/bin/bash
+# Project VitalLeak - Challenge Reset and Recovery
+# Purpose: Recreate the Stage 3 and Stage 6 challenge containers.
+# Scope: CTFd and MariaDB are not directly targeted by this script.
+# Verification: Check container status and application availability
+# after the reset completes.
+
 echo "Initiating Project VitalLeak Environment Reset..."
 
 # Target only the vulnerable containers for destruction, wiping their volumes
