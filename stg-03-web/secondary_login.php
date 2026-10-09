@@ -12,11 +12,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $user = $_POST['username'];
     $pass = $_POST['password'];
 
-    // INTENTIONALLY VULNERABLE QUERY: This allows SQL Injection
+    
     $query = "SELECT * FROM superadmins WHERE username = '$user' AND password = '$pass'";
     
-    // The @ suppresses raw PHP errors so attackers have to guess blindly or use standard SQLi logic
-    $result = @$db->querySingle($query, true);
+    
+    $result = $db->querySingle($query, true);
 
     if ($result) {
         $_SESSION['superadmin'] = true;
