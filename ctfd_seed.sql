@@ -62,7 +62,7 @@ CREATE TABLE `awards` (
   KEY `awards_ibfk_2` (`user_id`),
   CONSTRAINT `awards_ibfk_1` FOREIGN KEY (`team_id`) REFERENCES `teams` (`id`) ON DELETE CASCADE,
   CONSTRAINT `awards_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -71,7 +71,7 @@ CREATE TABLE `awards` (
 
 LOCK TABLES `awards` WRITE;
 /*!40000 ALTER TABLE `awards` DISABLE KEYS */;
-INSERT INTO `awards` VALUES (1,1,NULL,'Hint 4','Hint for Stage 04:-packet pulse ','2026-10-07 08:35:47.564346',-8,'hints',NULL,NULL,'standard');
+INSERT INTO `awards` VALUES (1,1,NULL,'Hint 4','Hint for Stage 04:-packet pulse ','2026-10-07 08:35:47.564346',-8,'hints',NULL,NULL,'standard'),(2,2,NULL,'Hint 3','Hint for Stage 3: The Legacy Portal','2026-10-08 15:00:27.491374',-7,'hints',NULL,NULL,'standard'),(3,2,NULL,'Hint 5','Hint for Stage 05 :-The encrypted lock','2026-10-09 13:09:00.867316',-10,'hints',NULL,NULL,'standard');
 /*!40000 ALTER TABLE `awards` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -231,7 +231,7 @@ CREATE TABLE `config` (
 
 LOCK TABLES `config` WRITE;
 /*!40000 ALTER TABLE `config` DISABLE KEYS */;
-INSERT INTO `config` VALUES (1,'ctf_version','3.8.8'),(2,'dynamic_challenges_alembic_version','93284ed9c099'),(3,'ctf_name','Project VitalLeak - CTF Play Box'),(4,'ctf_description','## Overview\r\nA containerized CTF environment simulating a healthcare data breach. The platform uses Docker Compose to isolate intentionally vulnerable containers from the control layer and host network.\r\n\r\n## System Requirements\r\n- Ubuntu/Pop!_OS (Linux 64-bit)\r\n- Docker Engine & Docker Compose\r\n- Ports Required: 80, 8080, 8081, 2222\r\n\r\n## Lecturer Deployment Guide\r\n1. **Clone & Navigate:**\r\n   `git clone [repository_link]`\r\n   `cd Project-VitalLeak-penestration-testing-docker-CTF-playbox`\r\n\r\n2. **Deploy the Environment:**\r\n   Run the following command to build the networks and spin up all containers:\r\n   `docker-compose up -d --build`\r\n\r\n3. **Access the Box:**\r\n   - **CTFd Dashboard:** `http://localhost:80`\r\n   - **Stage 3 Web Portal:** `http://localhost:8080`\r\n   - **Stage 6 Forensics:** `ssh aurastaff@localhost -p 2222`'),(5,'user_mode','users'),(6,'ctf_theme','core'),(7,'start',''),(8,'end',''),(9,'freeze',NULL),(10,'challenge_visibility','private'),(11,'registration_visibility','private'),(12,'score_visibility','private'),(13,'account_visibility','private'),(14,'verify_emails','false'),(15,'social_shares','true'),(16,'team_size',''),(17,'mail_server',NULL),(18,'mail_port',NULL),(19,'mail_tls',NULL),(20,'mail_ssl',NULL),(21,'mail_username',NULL),(22,'mail_password',NULL),(23,'mail_useauth',NULL),(24,'setup','1'),(25,'version_latest',NULL),(26,'next_update_check','1791406088');
+INSERT INTO `config` VALUES (1,'ctf_version','3.8.8'),(2,'dynamic_challenges_alembic_version','93284ed9c099'),(3,'ctf_name','Project VitalLeak - CTF Play Box'),(4,'ctf_description','## Overview\r\nA containerized CTF environment simulating a healthcare data breach. The platform uses Docker Compose to isolate intentionally vulnerable containers from the control layer and host network.\r\n\r\n## System Requirements\r\n- Ubuntu/Pop!_OS (Linux 64-bit)\r\n- Docker Engine & Docker Compose\r\n- Ports Required: 80, 8080, 8081, 2222\r\n\r\n## Lecturer Deployment Guide\r\n1. **Clone & Navigate:**\r\n   `git clone [repository_link]`\r\n   `cd Project-VitalLeak-penestration-testing-docker-CTF-playbox`\r\n\r\n2. **Deploy the Environment:**\r\n   Run the following command to build the networks and spin up all containers:\r\n   `docker-compose up -d --build`\r\n\r\n3. **Access the Box:**\r\n   - **CTFd Dashboard:** `http://localhost:80`\r\n   - **Stage 3 Web Portal:** `http://localhost:8080`\r\n   - **Stage 6 Forensics:** `ssh aurastaff@localhost -p 2222`'),(5,'user_mode','users'),(6,'ctf_theme','core'),(7,'start',''),(8,'end',''),(9,'freeze',NULL),(10,'challenge_visibility','private'),(11,'registration_visibility','private'),(12,'score_visibility','private'),(13,'account_visibility','private'),(14,'verify_emails','false'),(15,'social_shares','true'),(16,'team_size',''),(17,'mail_server',NULL),(18,'mail_port',NULL),(19,'mail_tls',NULL),(20,'mail_ssl',NULL),(21,'mail_username',NULL),(22,'mail_password',NULL),(23,'mail_useauth',NULL),(24,'setup','1'),(25,'version_latest',NULL),(26,'next_update_check','1791756004');
 /*!40000 ALTER TABLE `config` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -570,7 +570,7 @@ CREATE TABLE `solves` (
 
 LOCK TABLES `solves` WRITE;
 /*!40000 ALTER TABLE `solves` DISABLE KEYS */;
-INSERT INTO `solves` VALUES (1,1,1,NULL),(2,2,1,NULL),(3,3,1,NULL),(4,4,1,NULL),(5,5,1,NULL),(6,6,1,NULL);
+INSERT INTO `solves` VALUES (1,1,1,NULL),(2,2,1,NULL),(3,3,1,NULL),(4,4,1,NULL),(5,5,1,NULL),(6,6,1,NULL),(8,1,2,NULL),(10,2,2,NULL),(11,3,2,NULL),(12,1,3,NULL),(13,2,3,NULL),(14,3,3,NULL),(15,4,3,NULL),(16,5,3,NULL),(17,6,3,NULL),(19,4,2,NULL),(21,5,2,NULL),(23,1,4,NULL);
 /*!40000 ALTER TABLE `solves` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -597,7 +597,7 @@ CREATE TABLE `submissions` (
   CONSTRAINT `submissions_ibfk_1` FOREIGN KEY (`challenge_id`) REFERENCES `challenges` (`id`) ON DELETE CASCADE,
   CONSTRAINT `submissions_ibfk_2` FOREIGN KEY (`team_id`) REFERENCES `teams` (`id`) ON DELETE CASCADE,
   CONSTRAINT `submissions_ibfk_3` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -606,7 +606,7 @@ CREATE TABLE `submissions` (
 
 LOCK TABLES `submissions` WRITE;
 /*!40000 ALTER TABLE `submissions` DISABLE KEYS */;
-INSERT INTO `submissions` VALUES (1,1,1,NULL,'192.168.65.1','Vital{0S1NT_C0mm1t_H1st0ry_L34k}','correct','2026-10-07 08:34:58.700804'),(2,2,1,NULL,'192.168.65.1','Vital{F1ND_H1DD3N_PA55W0RD}','correct','2026-10-07 08:35:07.000672'),(3,3,1,NULL,'192.168.65.1','Vital{SQL_1nj3ct10n_m4st3r}','correct','2026-10-07 08:35:30.628382'),(4,4,1,NULL,'192.168.65.1','Vital{FTP_cl34rt3xt_sn1ff3d}','correct','2026-10-07 08:35:54.186268'),(5,5,1,NULL,'192.168.65.1','Vital{X0R_c1ph3r_br0k3n}','correct','2026-10-07 08:36:05.841202'),(6,6,1,NULL,'192.168.65.1','Vital{R00t_Pr1v_Esc_SU1D}','correct','2026-10-07 08:36:14.442389');
+INSERT INTO `submissions` VALUES (1,1,1,NULL,'192.168.65.1','Vital{0S1NT_C0mm1t_H1st0ry_L34k}','correct','2026-10-07 08:34:58.700804'),(2,2,1,NULL,'192.168.65.1','A_@2u0r5@_2!0@%','correct','2026-10-07 08:35:07.000672'),(3,3,1,NULL,'192.168.65.1','Vital{SQL_1nj3ct10n_m4st3r}','correct','2026-10-07 08:35:30.628382'),(4,4,1,NULL,'192.168.65.1','Vital{FTP_cl34rt3xt_sn1ff3d}','correct','2026-10-07 08:35:54.186268'),(5,5,1,NULL,'192.168.65.1','Vital{X0R_c1ph3r_br0k3n}','correct','2026-10-07 08:36:05.841202'),(6,6,1,NULL,'192.168.65.1','Vital{R00t_Pr1v_Esc_SU1D}','correct','2026-10-07 08:36:14.442389'),(7,1,2,NULL,'172.18.0.1','asdsa','incorrect','2026-10-08 14:29:56.209093'),(8,1,2,NULL,'172.18.0.1','Vital{0S1NT_C0mm1t_H1st0ry_L34k}','correct','2026-10-08 14:30:14.983793'),(9,2,2,NULL,'172.18.0.1','sazfda','incorrect','2026-10-08 15:00:08.267248'),(10,2,2,NULL,'172.18.0.1','A_@2u0r5@_2!0@%','correct','2026-10-08 15:00:16.595722'),(11,3,2,NULL,'172.18.0.1','Vital{SQL_1nj3ct10n_m4st3r}','correct','2026-10-08 15:00:42.596692'),(12,1,3,NULL,'172.18.0.1','Vital{0S1NT_C0mm1t_H1st0ry_L34k}','correct','2026-10-08 16:39:40.014823'),(13,2,3,NULL,'172.18.0.1','A_@2u0r5@_2!0@%','correct','2026-10-08 16:39:43.895252'),(14,3,3,NULL,'172.18.0.1','Vital{SQL_1nj3ct10n_m4st3r}','correct','2026-10-08 16:40:20.885392'),(15,4,3,NULL,'172.18.0.1','Vital{FTP_cl34rt3xt_sn1ff3d}','correct','2026-10-08 16:40:41.933947'),(16,5,3,NULL,'172.18.0.1','Vital{X0R_c1ph3r_br0k3n}','correct','2026-10-08 16:41:10.843613'),(17,6,3,NULL,'172.18.0.1','Vital{R00t_Pr1v_Esc_SU1D}','correct','2026-10-08 16:44:06.675252'),(18,4,2,NULL,'192.168.65.1','eduroigkhv\\','incorrect','2026-10-09 13:08:30.839016'),(19,4,2,NULL,'192.168.65.1','Vital{FTP_cl34rt3xt_sn1ff3d}','correct','2026-10-09 13:08:46.208330'),(20,5,2,NULL,'192.168.65.1','sadhjfed','incorrect','2026-10-09 13:13:41.390594'),(21,5,2,NULL,'192.168.65.1','Vital{X0R_c1ph3r_br0k3n}','correct','2026-10-09 13:14:00.043950'),(22,1,4,NULL,'192.168.65.1','dhfgo','incorrect','2026-10-09 13:24:57.579865'),(23,1,4,NULL,'192.168.65.1','Vital{0S1NT_C0mm1t_H1st0ry_L34k}','correct','2026-10-09 13:25:20.849572');
 /*!40000 ALTER TABLE `submissions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -750,7 +750,7 @@ CREATE TABLE `tracking` (
   PRIMARY KEY (`id`),
   KEY `tracking_ibfk_1` (`user_id`),
   CONSTRAINT `tracking_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -759,7 +759,7 @@ CREATE TABLE `tracking` (
 
 LOCK TABLES `tracking` WRITE;
 /*!40000 ALTER TABLE `tracking` DISABLE KEYS */;
-INSERT INTO `tracking` VALUES (1,NULL,'192.168.65.1',1,'2026-10-07 08:36:14.428081',NULL);
+INSERT INTO `tracking` VALUES (1,NULL,'192.168.65.1',1,'2026-10-11 09:54:09.567308',NULL),(2,NULL,'172.18.0.1',1,'2026-10-08 16:39:00.417708',NULL),(3,NULL,'172.18.0.1',2,'2026-10-08 15:00:42.580723',NULL),(4,'challenges.open','172.18.0.1',2,'2026-10-08 14:29:50.444068',1),(5,'challenges.open','172.18.0.1',2,'2026-10-08 14:30:16.518117',2),(6,'challenges.open','172.18.0.1',2,'2026-10-08 15:00:25.407850',3),(7,NULL,'172.18.0.1',3,'2026-10-08 16:44:06.658086',NULL),(8,'challenges.open','172.18.0.1',3,'2026-10-08 16:39:37.252065',1),(9,'challenges.open','172.18.0.1',3,'2026-10-08 16:39:41.424835',2),(10,'challenges.open','172.18.0.1',3,'2026-10-08 16:39:45.680542',3),(11,'challenges.open','172.18.0.1',3,'2026-10-08 16:40:23.291795',4),(12,'challenges.open','172.18.0.1',3,'2026-10-08 16:40:43.641944',5),(13,'challenges.open','172.18.0.1',3,'2026-10-08 16:41:12.252378',6),(14,NULL,'192.168.65.1',2,'2026-10-09 13:14:00.028739',NULL),(15,'challenges.open','192.168.65.1',2,'2026-10-09 13:08:26.181760',4),(16,'challenges.open','192.168.65.1',2,'2026-10-09 13:08:58.093793',5),(17,'challenges.open','192.168.65.1',2,'2026-10-09 13:14:01.132863',6),(18,NULL,'192.168.65.1',4,'2026-10-09 13:25:20.834475',NULL),(19,'challenges.open','192.168.65.1',4,'2026-10-09 13:24:51.051688',1);
 /*!40000 ALTER TABLE `tracking` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -782,7 +782,7 @@ CREATE TABLE `unlocks` (
   KEY `unlocks_ibfk_2` (`user_id`),
   CONSTRAINT `unlocks_ibfk_1` FOREIGN KEY (`team_id`) REFERENCES `teams` (`id`) ON DELETE CASCADE,
   CONSTRAINT `unlocks_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -791,7 +791,7 @@ CREATE TABLE `unlocks` (
 
 LOCK TABLES `unlocks` WRITE;
 /*!40000 ALTER TABLE `unlocks` DISABLE KEYS */;
-INSERT INTO `unlocks` VALUES (1,1,NULL,4,'2026-10-07 08:35:47.564973','hints');
+INSERT INTO `unlocks` VALUES (1,1,NULL,4,'2026-10-07 08:35:47.564973','hints'),(2,2,NULL,3,'2026-10-08 15:00:27.492727','hints'),(3,2,NULL,5,'2026-10-09 13:09:00.867974','hints');
 /*!40000 ALTER TABLE `unlocks` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -829,7 +829,7 @@ CREATE TABLE `users` (
   KEY `bracket_id` (`bracket_id`),
   CONSTRAINT `users_ibfk_1` FOREIGN KEY (`team_id`) REFERENCES `teams` (`id`),
   CONSTRAINT `users_ibfk_2` FOREIGN KEY (`bracket_id`) REFERENCES `brackets` (`id`) ON DELETE SET NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -838,7 +838,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,NULL,'admin','$bcrypt-sha256$v=2,t=2b,r=12$RJHSX86TZzjSZnMGRkQ68.$yKYT/kYAjuMre7gFQuDzDzbNdibNvoW','a@gmail.com','admin',NULL,NULL,NULL,NULL,1,0,0,NULL,'2026-10-07 06:37:07.965328',NULL,NULL,0),(2,NULL,'user','$bcrypt-sha256$v=2,t=2b,r=12$j2cSeV85BFU/9P5oILltse$K6OzDVsqUpJ660gN6mlHG4X7cpBcz4q','user@gmail.com','user',NULL,NULL,NULL,NULL,0,0,0,NULL,'2026-10-07 06:37:36.412388',NULL,NULL,0);
+INSERT INTO `users` VALUES (1,NULL,'admin','$bcrypt-sha256$v=2,t=2b,r=12$RJHSX86TZzjSZnMGRkQ68.$yKYT/kYAjuMre7gFQuDzDzbNdibNvoW','a@gmail.com','admin',NULL,NULL,NULL,NULL,1,0,0,NULL,'2026-10-07 06:37:07.965328',NULL,NULL,0),(2,NULL,'user','$bcrypt-sha256$v=2,t=2b,r=12$j2cSeV85BFU/9P5oILltse$K6OzDVsqUpJ660gN6mlHG4X7cpBcz4q','user@gmail.com','user',NULL,NULL,NULL,NULL,0,0,0,NULL,'2026-10-07 06:37:36.412388',NULL,NULL,0),(3,NULL,'a','$bcrypt-sha256$v=2,t=2b,r=12$pJZOdexu9bldklmXGe66b.$F0GEa/lzxtFaBva6vj8GpgnickTVdci','a@f.com','user',NULL,NULL,NULL,'AF',0,0,1,NULL,'2026-10-08 16:39:00.669554',NULL,NULL,0),(4,NULL,'test','$bcrypt-sha256$v=2,t=2b,r=12$3o8FSEJQ2u11vwxYiV68yu$bQU6lu3bNVX9OaZaPD5Utcayvwf/u6m','t@g.com','user',NULL,NULL,NULL,NULL,0,0,0,NULL,'2026-10-09 13:18:04.450471',NULL,NULL,0);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -851,4 +851,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-10-07  8:52:53
+-- Dump completed on 2026-10-11 10:00:34
