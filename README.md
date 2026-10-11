@@ -194,7 +194,7 @@ cd Project-VitalLeak-penestration-testing-docker-CTF-playbox
 **2. Deploy the environment**
 
 ```bash
-docker-compose up -d --build
+docker compose up -d --build
 ```
 
 >  Docker builds the vulnerable containers from scratch while MariaDB ingests the SQL seed file in the background. Allow a minute or two on first launch.
@@ -202,13 +202,13 @@ docker-compose up -d --build
 **3. Verify that everything is running**
 
 ```bash
-docker-compose ps
+docker compose ps
 ```
 
 **4. Shut down when finished**
 
 ```bash
-docker-compose down
+docker compose down
 ```
 
 ---
@@ -245,7 +245,7 @@ The script targets the legacy portal and forensic containers, destroys them, and
 Run the equivalent Docker Compose command:
 
 ```bash
-docker-compose up -d --force-recreate --build stg_03_legacy_portal stg_06_forensics
+docker compose up -d --force-recreate --build stg_03_legacy_portal stg_06_forensics
 ```
 
 ---
@@ -300,8 +300,8 @@ Project-VitalLeak/
 To fully rebuild everything from scratch:
 
 ```bash
-docker-compose down -v
-docker-compose up -d --build
+docker compose down -v
+docker compose up -d --build
 ```
 
 >  The `-v` flag also deletes the database volume, which resets all player progress.
