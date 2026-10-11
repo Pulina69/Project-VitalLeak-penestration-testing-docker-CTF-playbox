@@ -383,7 +383,7 @@ CREATE TABLE `flags` (
 
 LOCK TABLES `flags` WRITE;
 /*!40000 ALTER TABLE `flags` DISABLE KEYS */;
-INSERT INTO `flags` VALUES (1,1,'static','Vital{0S1NT_C0mm1t_H1st0ry_L34k}',''),(2,2,'static','A_@2u0r5@_2!0@%',''),(3,3,'static','Vital{SQL_1nj3ct10n_m4st3r}',''),(4,4,'static','Vital{FTP_cl34rt3xt_sn1ff3d}',''),(5,5,'static','Vital{X0R_c1ph3r_br0k3n}',''),(6,6,'static','Vital{R00t_Pr1v_Esc_SU1D}','');
+INSERT INTO `flags` VALUES (1,1,'static','Vital{0S1NT_C0mm1t_H1st0ry_L34k}',''),(2,2,'static','Vital{F1ND_H1DD3N_PA55W0RD}',''),(3,3,'static','Vital{SQL_1nj3ct10n_m4st3r}',''),(4,4,'static','Vital{FTP_cl34rt3xt_sn1ff3d}',''),(5,5,'static','Vital{X0R_c1ph3r_br0k3n}',''),(6,6,'static','Vital{R00t_Pr1v_Esc_SU1D}','');
 /*!40000 ALTER TABLE `flags` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -606,7 +606,7 @@ CREATE TABLE `submissions` (
 
 LOCK TABLES `submissions` WRITE;
 /*!40000 ALTER TABLE `submissions` DISABLE KEYS */;
-INSERT INTO `submissions` VALUES (1,1,1,NULL,'192.168.65.1','Vital{0S1NT_C0mm1t_H1st0ry_L34k}','correct','2026-10-07 08:34:58.700804'),(2,2,1,NULL,'192.168.65.1','A_@2u0r5@_2!0@%','correct','2026-10-07 08:35:07.000672'),(3,3,1,NULL,'192.168.65.1','Vital{SQL_1nj3ct10n_m4st3r}','correct','2026-10-07 08:35:30.628382'),(4,4,1,NULL,'192.168.65.1','Vital{FTP_cl34rt3xt_sn1ff3d}','correct','2026-10-07 08:35:54.186268'),(5,5,1,NULL,'192.168.65.1','Vital{X0R_c1ph3r_br0k3n}','correct','2026-10-07 08:36:05.841202'),(6,6,1,NULL,'192.168.65.1','Vital{R00t_Pr1v_Esc_SU1D}','correct','2026-10-07 08:36:14.442389');
+INSERT INTO `submissions` VALUES (1,1,1,NULL,'192.168.65.1','Vital{0S1NT_C0mm1t_H1st0ry_L34k}','correct','2026-10-07 08:34:58.700804'),(2,2,1,NULL,'192.168.65.1','Vital{F1ND_H1DD3N_PA55W0RD}','correct','2026-10-07 08:35:07.000672'),(3,3,1,NULL,'192.168.65.1','Vital{SQL_1nj3ct10n_m4st3r}','correct','2026-10-07 08:35:30.628382'),(4,4,1,NULL,'192.168.65.1','Vital{FTP_cl34rt3xt_sn1ff3d}','correct','2026-10-07 08:35:54.186268'),(5,5,1,NULL,'192.168.65.1','Vital{X0R_c1ph3r_br0k3n}','correct','2026-10-07 08:36:05.841202'),(6,6,1,NULL,'192.168.65.1','Vital{R00t_Pr1v_Esc_SU1D}','correct','2026-10-07 08:36:14.442389');
 /*!40000 ALTER TABLE `submissions` ENABLE KEYS */;
 UNLOCK TABLES;
 
