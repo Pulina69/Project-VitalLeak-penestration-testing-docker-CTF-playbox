@@ -92,6 +92,93 @@ This segmentation, combined with Docker hardening controls (such as `cap_drop` a
 Make sure none of the required ports are already in use before deploying.
 
 ---
+--
+
+##  Installing Git LFS
+
+This repository stores large binary assets (such as challenge images and the packet capture) using **[Git Large File Storage (LFS)](https://git-lfs.com/)**. Install Git LFS **before cloning**. Otherwise those files download as tiny text pointer files and the challenges will not work.
+
+<details>
+<summary><b>🪟 Windows</b></summary>
+
+Git LFS is bundled with recent versions of [Git for Windows](https://git-scm.com/download/win). If it is missing, install it with one of the following:
+
+```powershell
+# Option 1: winget
+winget install GitHub.GitLFS
+
+# Option 2: Chocolatey
+choco install git-lfs
+
+# Option 3: Scoop
+scoop install git-lfs
+```
+
+Or download the installer from [git-lfs.com](https://git-lfs.com/) and run it.
+
+> Using **WSL2**? Install Git LFS inside your WSL distribution too, using the Linux steps below.
+
+</details>
+
+<details>
+<summary><b>🍎 macOS</b></summary>
+
+```bash
+# Option 1: Homebrew (recommended)
+brew install git-lfs
+
+# Option 2: MacPorts
+sudo port install git-lfs
+```
+
+</details>
+
+<details>
+<summary><b>🐧 Linux</b></summary>
+
+```bash
+# Ubuntu / Debian / Pop!_OS / Linux Mint
+sudo apt update && sudo apt install git-lfs
+
+# Fedora / RHEL / CentOS / Rocky
+sudo dnf install git-lfs
+
+# Arch / Manjaro
+sudo pacman -S git-lfs
+
+# openSUSE
+sudo zypper install git-lfs
+
+# Alpine
+sudo apk add git-lfs
+```
+
+</details>
+
+### Activate and verify (all operating systems)
+
+Run this once per machine to set up the Git LFS hooks:
+
+```bash
+git lfs install
+```
+
+Confirm the installation:
+
+```bash
+git lfs version
+```
+
+You should see output similar to `git-lfs/3.x.x`.
+
+> 💡 **Already cloned without Git LFS?** Install it, then run the following inside the project folder to fetch the real files:
+>
+> ```bash
+> git lfs install
+> git lfs pull
+> ```
+
+---
 
 ##  Quick Start
 
