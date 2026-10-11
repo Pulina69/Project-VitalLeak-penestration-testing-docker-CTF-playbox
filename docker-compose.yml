@@ -1,9 +1,10 @@
 networks:
   vital_net:
     driver: bridge
+    internal: true
     ipam:
       config:
-        - subnet: 172.29.0.0/16
+        - subnet: 172.30.0.0/16
   ctfd_net:
     driver: bridge
 
@@ -42,7 +43,7 @@ services:
   static_file_server:
     image: nginx:alpine
     ports:
-      - "8081:80"
+      - "8080:80"
     networks:
       - vital_net
     volumes:
